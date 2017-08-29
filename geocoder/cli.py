@@ -20,9 +20,9 @@ units = ['kilometers', 'miles', 'feet', 'meters']
 
 @click.command()
 @click.argument('location', nargs=-1)
-@click.option('--provider', '-p', default='osm', type=click.Choice(providers))
+@click.option('--provider', '-p', default='osm', type=click.Choice(providers),help='to choose the geocoding provider')
 @click.option('--method', '-m', default='geocode', type=click.Choice(methods))
-@click.option('--output', '-o', default='json', type=click.Choice(outputs))
+@click.option('--output', '-o', default='json', type=click.Choice(outputs)help='to choose the output format')
 @click.option('--units', '-u', default='kilometers', type=click.Choice(units))
 @click.option('--timeout', '-t', default=5.0)
 @click.option('--distance', is_flag=True)
